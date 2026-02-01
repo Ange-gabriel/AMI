@@ -1,0 +1,31 @@
+# Fichiers de compilation
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# Répertoire build
+build/
+obj/
+
+# Bases de données SQLite
+*.db
+*.db-journal
+
+# Exports CSV
+chat_export_*.csv
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
