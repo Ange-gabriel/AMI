@@ -59,18 +59,15 @@ sudo make install
 
 #### Linux
 ```bash
-gcc -I include -Wall -O2 -pthread \
-    src/*.c \
-    -o build/ami \
+gcc -Wall -O2 -pthread \
+    AMI.c \
+    -o ami.exe\
     -lsqlite3 -lpthread
 ```
 
 #### Windows (MinGW)
 ```bash
-gcc -I include -Wall -O2 \
-    src/*.c \
-    -o build/ami.exe \
-    -lws2_32 -lsqlite3
+gcc AMI.c sqlite3.c -o ami.exe -lws2_32 -Wall
 ```
 
 ## 📖 Utilisation
@@ -96,7 +93,7 @@ build\ami.exe
 
 #### Historique SQLite
 - `/search mot` - Rechercher dans l'historique
-- `/history [N]` - Afficher les N derniers messages (défaut: 20)
+- `/history [N]` - Afficher les N derniers messages (par défaut: 20)
 - `/stats` - Afficher les statistiques
 - `/export` - Exporter l'historique en CSV
 
@@ -110,12 +107,6 @@ Par défaut, AMI utilise :
 - **Groupe multicast** : 224.0.0.1
 - **Port** : 8888
 - **TTL** : 2 (réseau local)
-
-Pour modifier ces paramètres, éditez `include/ami_types.h` :
-```c
-#define MULTICAST_GROUP "224.0.0.1"
-#define MULTICAST_PORT 8888
-```
 
 ## 💾 Base de données
 
